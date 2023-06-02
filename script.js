@@ -60,15 +60,18 @@ function addTask(event) {
   // Validate the name input
   const name = nameInput.value.trim();
   const desp = descriptionInput.value.trim();
+  const assignedName = assignedToInput.value.trim();
   if (name === '' || name.length < 8) {
     alert('Task Name must not be empty and should be at least 8 characters long.');
     return;
   } 
   else if (desp === '' || desp.length < 15 ){
   alert('Add some relevant description atleast upto 15 characters.');
-  return;
-}
-
+  } 
+  else if (assignedName === '' || assignedName.length < 8) {
+    alert('Task Name must not be empty and should be at least 8 characters long.');
+    return;
+  }
 
   // Add the task to the task manager
   taskManager.addTask(
