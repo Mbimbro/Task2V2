@@ -65,7 +65,7 @@ function addTask(event) {
   if (name === '' || name.length > 8) {
     alert('Task Name must not be empty and should not exceed 8 characters.');
     return;
-  } else if (description === '' || description.length < 15) {
+  } else if (description === '' || description.length > 15) {
     alert('Add some relevant description and not longer than 15 characters.');
     return;
   } else if (assignedTo === '' || assignedTo.length > 8) {

@@ -5,10 +5,14 @@
   text-align: left;
 }
 
+#task-list {
+  text-align: left;
+}
 
 table {
   width: 100%;
   border-collapse: collapse;
+  margin-left: 0;
 }
 
 th,
