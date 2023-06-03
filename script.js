@@ -1,4 +1,4 @@
-// TaskManager class for managing tasks
+//TaskManager class for managing tasks
 class TaskManager {
   constructor() {
     this.tasks = [];
@@ -59,22 +59,25 @@ function addTask(event) {
 
   // Validate the name input
   const name = nameInput.value.trim();
-  const desp = descriptionInput.value.trim();
-  if (name === '' || name.length < 8) {
-    alert('Task Name must not be empty and should be at least 8 characters long.');
-    return;
-  } 
-  else if (desp === '' || desp.length < 15 ){
-  alert('Add some relevant description atleast upto 15 characters.');
-  return;
-}
+  const description = descriptionInput.value.trim();
+  const assignedTo = assignedToInput.value.trim();
 
+  if (name === '' || name.length > 8) {
+    alert('Task Name must not be empty and should not exceed 8 characters.');
+    return;
+  } else if (description === '' || description.length > 15) {
+    alert('Add some relevant description and not longer than 15 characters.');
+    return;
+  } else if (assignedTo === '' || assignedTo.length > 8) {
+    alert('Assigned To field must not be empty and should not exceed 8 characters.');
+    return;
+  }
 
   // Add the task to the task manager
   taskManager.addTask(
     name,
-    descriptionInput.value.trim(),
-    assignedToInput.value.trim(),
+    description,
+    assignedTo,
     dueDateInput.value,
     statusInput.value
   );
@@ -109,5 +112,4 @@ taskTable.addEventListener('click', event => {
 });
 
 // Render initial tasks
-taskManager.render();
 taskManager.render();
